@@ -62,7 +62,7 @@ static std::string string_to_hex(const std::string& input)
 void udp_server::udp_read_loop(const util::thread_sched_params& sched_params)
 {
   endpoint                                r_endpoint = {};
-  size_t                                  bytes_received = 0;
+  ssize_t                                  bytes_received = 0;
 
   sched_params.apply(TASK_NONE, Logger::udp());
 
